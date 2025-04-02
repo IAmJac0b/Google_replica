@@ -18,6 +18,7 @@
             flex-direction: column;
             min-height: 100vh;
             background: #f0f4f9;
+            overflow: hidden; /* Prevent scrolling */
         }
 
         nav {
@@ -38,6 +39,7 @@
             justify-content: center; /* Center horizontally */
             align-items: center; /* Center vertically */
             height: 100vh; /* Make the main element take the full height of the viewport */
+            overflow: hidden; /* Prevent scrolling inside the main area */
         }
 
         .container {
@@ -45,9 +47,9 @@
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            width: 1000px;
+            width: 900px; /* Increase the width to make the box longer */
             border-radius: 25px;
-            padding: 60px 50px;
+            padding: 60px 50px; /* Adjust padding for better spacing */
             background: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
         }
@@ -74,6 +76,7 @@
             flex-direction: column;
             align-items: flex-start;
             margin-top: auto;
+            width: 100%; /* Ensure it uses the full width of the container */
         }
 
         h1 {
@@ -87,6 +90,7 @@
             font-weight: 400;
             margin-bottom: 32px;
             color: #202124;
+            white-space: nowrap; /* Ensure the text stays on one line */
         }
 
         .form-group {
@@ -147,7 +151,7 @@
             align-items: center;
             position: absolute;
             bottom: 20px;
-            right: 120px;
+            right: 30px; /* Adjust to reduce free space on the right */
             gap: 16px;
         }
 
@@ -176,11 +180,30 @@
 
         footer {
             background: #f0f4f9;
-            padding: 24px;
+            padding: 16px 24px;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             color: #757575;
             font-size: 12px;
+            position: fixed; /* Fix the footer to the bottom of the page */
+            bottom: 0; /* Align it to the bottom */
+            left: 0;
+            width: 100%; /* Make it span the full width of the page */
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between; /* Space out the left and right sections */
+            align-items: center;
+            width: 100%; /* Ensure it spans the full width of the footer */
+            max-width: 1200px; /* Optional: Limit the width for better alignment */
+            margin: 0 auto; /* Center the footer content */
+        }
+
+        .footer-left {
+            display: flex;
+            align-items: center;
         }
 
         .footer-left select {
@@ -192,10 +215,17 @@
             outline: none;
         }
 
+        .footer-right {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; /* Align links to the right */
+            gap: 24px; /* Add spacing between the links */
+        }
+
         .footer-right a {
             color: #757575;
             text-decoration: none;
-            margin-left: 24px;
+            font-size: 12px;
         }
 
         .hidden {
@@ -233,16 +263,17 @@
     </main>
 
     <footer>
-        <div class="footer-left">
-            <select>
-                <option>English (United States)</option>
-            </select>
-        </div>
-        
-        <div class="footer-right">
-            <a href="#">Help</a>
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
+        <div class="footer-container">
+            <div class="footer-left">
+                <select>
+                    <option>English (United States)</option>
+                </select>
+            </div>
+            <div class="footer-right">
+                <a href="#">Help</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
         </div>
     </footer>
 
@@ -254,9 +285,9 @@
             nextButton.addEventListener('click', () => {
                 // Show the password field
                 passwordGroup.classList.remove('hidden');
-                nextButton.classList.add('hidden'); // Hide the "Next" button
             });
         });
     </script>
 </body>
 </html>
+``` 
