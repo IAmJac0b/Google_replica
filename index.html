@@ -34,14 +34,10 @@
         }
 
         main {
-            position: relative;
-            flex: 1;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 48px;
-            min-width: 600px;
-            margin: 0 auto;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Make the main element take the full height of the viewport */
         }
 
         .container {
@@ -53,6 +49,7 @@
             border-radius: 25px;
             padding: 60px 50px;
             background: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
         }
 
         .left-content {
@@ -207,13 +204,6 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-links">
-            <a href="#">Help</a>
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-        </div>
-    </nav>
 
     <main>
         <div class="container">
